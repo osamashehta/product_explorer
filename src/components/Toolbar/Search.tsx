@@ -1,7 +1,6 @@
 "use client";
 import { useRouter, useSearchParams } from "next/navigation";
 import React from "react";
-import Container from "../shared/Container";
 
 const Search = () => {
   const [term, setTerm] = React.useState("");
