@@ -4,21 +4,27 @@ import Container from "@/components/shared/Container";
 import { getProducts } from "@/lib/serverActions";
 import { Product } from "@/types/types";
 interface HomeProps {
-  searchParams: Promise<{q: string}>;
+  searchParams: Promise<{ q: string,sort: string }>;
 }
 export default async function Home({ searchParams }: HomeProps) {
   const data = await getProducts();
-  const { q } = await searchParams;
-  console.log("q", q);
+  const { q,sort } = await searchParams;
   const filteredProducts = data?.products.filter((product: Product) =>
     product.title.toLowerCase().includes(q?.toLowerCase() || "")
   );
-
+  const sortedData = filteredProducts?.sort((a:Product,b:Product)=> {
+    if(sort === "price_asc"){
+      return a.price - b.price;
+    }else if(sort === "price_desc"){
+      return b.price - a.price;
+    }
+    return 0;
+  })
 
   return (
-    <Container>
-      {filteredProducts.length === 0 && <Empty />}
-      <ProductsList products={filteredProducts} />
+    <Container className="my-10">
+      {sortedData?.length === 0 && <Empty />}
+      <ProductsList products={sortedData} />
     </Container>
   );
 }
