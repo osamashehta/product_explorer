@@ -29,8 +29,8 @@ const Filter = () => {
         <SelectContent>
           <SelectGroup>
             <SelectLabel>Price</SelectLabel>
-            <SelectItem value="price_asc">Price: Low to High</SelectItem>
-            <SelectItem value="price_desc">Price: High to Low</SelectItem>
+            <SelectItem value="asc">Price: Low to High</SelectItem>
+            <SelectItem value="desc">Price: High to Low</SelectItem>
           </SelectGroup>
         </SelectContent>
       </Select>
