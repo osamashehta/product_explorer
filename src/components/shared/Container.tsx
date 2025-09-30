@@ -9,7 +9,7 @@ const Container = ({
 }) => {
   return (
     <div
-      className={`container  my-10 mx-auto px-4 sm:px-10 md:px-10 lg:px-12 ${className}`}
+      className={`container   mx-auto px-4 sm:px-10 md:px-10 lg:px-12 ${className}`}
     >
       {children}
     </div>

@@ -6,11 +6,11 @@ interface ProductsListProps {
 }
 const ProductsList = ({ products }: ProductsListProps) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       {products.map((product) => (
         <div
           key={product.id}
-          className="border p-4 flex flex-col items-center justify-center rounded-[10px] shadow-[0px_0px_14px_#0000001a]"
+          className="border border-gray-300 p-4 flex flex-col items-center justify-center rounded-[10px] shadow-[0px_0px_14px_#00000025]"
         >
           <Image
             src={product.thumbnail}
