@@ -1,5 +1,4 @@
 import ProductDetails from "@/app/products/[id]/page";
-import { getProductDetails } from "@/lib/serverActions";
 import { screen, render } from "@testing-library/react";
 jest.mock("@/lib/serverActions", () => ({
   getProductDetails: jest.fn().mockResolvedValue({
