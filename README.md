@@ -179,10 +179,6 @@ Create a `.env.local` file in the root directory:
 ```env
 # API Configuration
 NEXT_PUBLIC_API_URL=https://dummyjson.com/
-
-# Optional: Analytics, monitoring, etc.
-# NEXT_PUBLIC_GA_ID=your_google_analytics_id
-# SENTRY_DSN=your_sentry_dsn
 ```
 
 ## Project Structure
