@@ -7,11 +7,12 @@ import dynamic from "next/dynamic";
 const DynamicPriceBadge = dynamic(
   () => import("@/components/PriceBadge/PriceBadge")
 );
+
 interface pageProps {
   params: Promise<{ id: string }>;
 }
 export const revalidate = 60;
-const page = async ({ params }: pageProps) => {
+const ProductDetails = async ({ params }: pageProps) => {
   const { id } = await params;
   const details: Product = await getProductDetails(id);
   return (
@@ -38,4 +39,4 @@ const page = async ({ params }: pageProps) => {
   );
 };
 
-export default page;
+export default ProductDetails;

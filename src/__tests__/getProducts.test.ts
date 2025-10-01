@@ -1,7 +1,7 @@
-import apiServiceCall from "../apiServerCall";
-import { getProducts } from "../serverActions";
+import apiServiceCall from "@/lib/apiServerCall";
+import { getProducts } from "@/lib/serverActions";
 
-jest.mock("../apiServerCall");
+jest.mock("@/lib/apiServerCall");
 const mockedApiServiceCall = apiServiceCall as jest.MockedFunction<
   typeof apiServiceCall
 >;
