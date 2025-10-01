@@ -2,7 +2,6 @@ import Empty from "@/components/Empty/Empty";
 import ProductsList from "@/components/ProductsList/ProductsList";
 import Container from "@/components/shared/Container";
 import { getProducts } from "@/lib/serverActions";
-import { Product } from "@/types/types";
 interface HomeProps {
   searchParams: Promise<{ q: string; sort: string }>;
 }

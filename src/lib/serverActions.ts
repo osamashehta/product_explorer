@@ -14,3 +14,12 @@ export const getProducts = async (q: string, sort: string) => {
     throw error;
   }
 };
+export const getProductDetails = async (id: string) => {
+  try {
+    const data = await apiServiceCall({ url: `products/${id}` });
+    return data;
+  } catch (error) {
+    console.error("Error fetching products:", error);
+    throw error;
+  }
+};
