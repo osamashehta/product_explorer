@@ -2,9 +2,9 @@
 
 import apiServiceCall from "./apiServerCall";
 
-export const getProducts = async (q: string, sort: string) => {
-  const url = `products/search?${q ? `q=${q}&` : ""}${
-    sort ? `sortBy=price&order=${sort}` : ""
+export const getProducts = async (q?: string, sort?: string) => {
+  const url = `products/search${q ? `?q=${q}` : ""}${
+    sort ? `&sortBy=price&order=${sort}` : ""
   }`;
   try {
     const products = await apiServiceCall({ url });
