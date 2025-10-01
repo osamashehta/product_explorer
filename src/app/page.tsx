@@ -1,6 +1,7 @@
 import Empty from "@/components/Empty/Empty";
 import ProductsList from "@/components/ProductsList/ProductsList";
 import Container from "@/components/shared/Container";
+import Toolbar from "@/components/Toolbar/Toolbar";
 import { getProducts } from "@/lib/serverActions";
 interface HomeProps {
   searchParams: Promise<{ q: string; sort: string }>;
@@ -11,6 +12,7 @@ export default async function Home({ searchParams }: HomeProps) {
 
   return (
     <Container className="my-10">
+      <Toolbar />
       {data?.products?.length === 0 && <Empty />}
       <ProductsList products={data?.products} />
     </Container>
