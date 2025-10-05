@@ -3,9 +3,16 @@
 import apiServiceCall from "./apiServerCall";
 
 export const getProducts = async (q?: string, sort?: string) => {
-  const url = `products/search${q ? `?q=${q}` : ""}${
-    sort ? `&sortBy=price&order=${sort}` : ""
-  }`;
+  const params = new URLSearchParams();
+
+  if (q) params.append("q", q);
+  if (sort) {
+    params.append("sortBy", "price");
+    params.append("order", sort);
+  }
+
+  const url = `products/search${params.toString() ? `?${params.toString()}` : ""}`;
+
   try {
     const products = await apiServiceCall({ url });
     return products;
